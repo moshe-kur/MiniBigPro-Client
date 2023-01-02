@@ -23,7 +23,7 @@ export const getOneProductFromDB = async (id) => {
     console.log(response);
 
     if (response.status === 200) {
-      return Object.values(response.data);
+      return response.data;
     }
   } catch (error) {
     console.error(error);

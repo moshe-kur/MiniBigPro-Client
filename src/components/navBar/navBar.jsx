@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 
 import LogoutButton from "../logOutBtn/logOutBtn";
-//לבדוק עם הערה
+
+import "./style.css";
 
 const NavBar = () => {
   return (
-    <ul>
+    <ul className="navBar">
       <li>
         <Link to="/">Home</Link>
       </li>
