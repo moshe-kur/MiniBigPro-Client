@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useAuth0 } from "@auth0/auth0-react";
+//import LinkRoute from "./components/linksRoute/linksRoute";
+import { Welcome } from "./Pages";
+import LinkRoute from "./components/linkRoute/linksRoute";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export const App = () => {
+  const { isAuthenticated, isLoading } = useAuth0();
+
+  if (isLoading) {
+    <h1>Loading</h1>;
+  } else {
+    if (isAuthenticated) {
+      return <LinkRoute></LinkRoute>;
+    } else {
+      return <Welcome></Welcome>;
+    }
+  }
+};
 
 export default App;
