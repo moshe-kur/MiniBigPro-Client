@@ -39,14 +39,14 @@ export const Products = (props) => {
         <tbody>
           {productsObject.length > 0 ? (
             productsObject.map((p) => {
-              let { ID, Name, UnitPrice, UnitInStock } = p;
+              let { ProductID, ProductName, UnitPrice, UnitInStock } = p;
               return (
                 <tr>
-                  <td>{ID}</td>
+                  <td>{ProductID}</td>
                   <td>
-                    <a href={"Product/" + ID}> {Name}</a>
+                    <a href={"Product/" + ProductID}> {ProductName}</a>
                   </td>
-                  <td>{UnitPrice} $</td>
+                  <td>{UnitPrice}</td>
                   <td>{UnitInStock}</td>
                 </tr>
               );

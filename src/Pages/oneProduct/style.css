@@ -1,12 +1,3 @@
-.productPage {
-  display: flex;
-  width: 25%;
-}
-
-.productPage > ul {
-  list-style: none;
-}
-
-.productPage > ul > input {
-  width: 150%;
+.productPage > label {
+  padding: 5px 10px;
 }

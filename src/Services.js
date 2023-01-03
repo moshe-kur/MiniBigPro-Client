@@ -30,4 +30,26 @@ export const getOneProductFromDB = async (id) => {
   }
 };
 
+export const sendProductToDB = async (product) => {
+  try {
+    let endpoint = `http://localhost:7007/api/Products/Update`;
+    let response = await axios.post(endpoint, product);
+    console.log("response from data");
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const deleteProductFromDB = async (id) => {
+  try {
+    let endpoint = `http://localhost:7007/api/Products/Remove`;
+    let response = await axios.post(endpoint, id);
+    console.log("response from data");
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export default getProductsFromDB;
